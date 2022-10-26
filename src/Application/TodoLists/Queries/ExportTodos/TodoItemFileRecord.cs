@@ -1,0 +1,11 @@
+﻿using StoryBook.Application.Common.Mappings;
+using StoryBook.Domain.Entities;
+
+namespace StoryBook.Application.TodoLists.Queries.ExportTodos;
+
+public class TodoItemRecord : IMapFrom<TodoItem>
+{
+    public string? Title { get; set; }
+
+    public bool Done { get; set; }
+}
