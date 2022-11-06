@@ -30,6 +30,9 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
     public DbSet<TodoList> TodoLists => Set<TodoList>();
 
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();
+    public DbSet<Album> Albums => Set<Album>();
+    public DbSet<Photo> Photos => Set<Photo>();
+    public DbSet<AlbumPhoto> AlbumPhotos => Set<AlbumPhoto>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
