@@ -9,5 +9,9 @@ public interface IApplicationDbContext
 
     DbSet<TodoItem> TodoItems { get; }
 
+    DbSet<Album> Albums { get; }
+    DbSet<Photo> Photos { get; }
+    DbSet<AlbumPhoto> AlbumPhotos { get; }
+
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }
