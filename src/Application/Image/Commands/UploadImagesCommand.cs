@@ -30,19 +30,10 @@ public class UploadImagesCommandHandler : IRequestHandler<UploadImagesCommand>
 
     public async Task<Unit> Handle(UploadImagesCommand request, CancellationToken cancellationToken)
     {
-        foreach(var img in request.Files)
-        {
+        // foreach(var img in request.Files)
+        // {
             
-        }
-        var album = new Album
-        {
-            Title = request.Title,
-            Note = request.Note
-        };
-
-        _context.Albums.Add(album);
-
-        await _context.SaveChangesAsync(cancellationToken);
+        // }
 
         return Unit.Value;
     }
