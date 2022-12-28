@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using StoryBook.Application.Image.Commands;
 
 public class ImageController : ApiControllerBase
 {
@@ -24,9 +25,11 @@ public class ImageController : ApiControllerBase
 
     // POST api/values
     [HttpPost]
-    public async Task<IActionResult> Post([FromForm] string value)
+    public async Task<IActionResult> Post([FromForm] UploadImagesCommand command)
     {
-
+        await Mediator.Send(command);
+        
+        return NoContent();
     }
 
     // PUT api/values/5
