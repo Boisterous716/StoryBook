@@ -7,6 +7,8 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddWebUIServices();
 
+builder.Services.Configure<FileConfiguration>(builder.Configuration.GetSection("FileConfiguration"));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,6 +37,7 @@ app.UseHealthChecks("/health");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseOpenApi();
 app.UseSwaggerUi3(settings =>
 {
     settings.Path = "/api";

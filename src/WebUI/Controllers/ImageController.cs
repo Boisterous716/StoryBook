@@ -25,7 +25,7 @@ public class ImageController : ApiControllerBase
 
     // POST api/values
     [HttpPost]
-    public async Task<IActionResult> Post([FromForm] UploadImagesCommand command)
+    public async Task<ActionResult> Post([FromForm] UploadImagesCommand command)
     {
         await Mediator.Send(command);
         
