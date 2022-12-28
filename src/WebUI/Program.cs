@@ -15,6 +15,8 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
     app.UseMigrationsEndPoint();
 
+    AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
     // Initialise and seed database
     using (var scope = app.Services.CreateScope())
     {
